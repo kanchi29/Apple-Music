@@ -31,16 +31,20 @@ nav ul li{
     padding: 0 12px;
 }
 .container{
-    min-height: 72vh;
+    min-height: 62vh;
     background-color:rgb(231, 212, 212);
     color: black;
     font-family: 'Varela Round', sans-serif;
     display: flex;
-    width: 70%;
+    width: 53.5%;
     margin: 23px auto;
+    border-radius: 10px;
+    padding: 30px;
+    background-image: url('bg.png');
 }
 .bottom{
     position: sticky;
+    bottom: 0;
     height: 100px;
     background-color: rgb(216, 203, 203);
     display: flex;
