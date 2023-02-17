@@ -7,6 +7,15 @@ let audioElement = new Audio('WAOYF.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar'); 
 
+let songs = [
+    {songName: "The Greatest", filePath: "songs/1.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Written All Over Your Face", filePath: "songs/WAOYF.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Bigger Than Me", filePath: "songs/2.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Face The Music", filePath: "songs/3.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Headline", filePath: "songs/4.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Saturdays", filePath: "songs/5.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Holding On To Heartache", filePath: "songs/6.mp3", coverPath: "covers/cover.jpg"}
+]
 
 // audioElement.play();
 
