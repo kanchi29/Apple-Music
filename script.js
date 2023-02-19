@@ -3,9 +3,10 @@ console.log(
 );
 //Initialize the Variables
 let songIndex = 0;
-let audioElement = new Audio('WAOYF.mp3');
+let audioElement = new Audio('songs/WAOYF.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar'); 
+let songItems = Array.from(document.getElementsByClassName("songItem"));
 
 let songs = [
     {songName: "The Greatest", filePath: "songs/1.mp3", coverPath: "covers/cover.jpg"},
@@ -16,6 +17,11 @@ let songs = [
     {songName: "Saturdays", filePath: "songs/5.mp3", coverPath: "covers/cover.jpg"},
     {songName: "Holding On To Heartache", filePath: "songs/6.mp3", coverPath: "covers/cover.jpg"}
 ]
+
+songItems.forEach((element, i)=>{
+    element.getElementsByTagName("img")[0].src = songs[i].coverPath;
+    element.getElementsByClassName("songName")[0].innerText= songs[i].songName;
+})
 
 // audioElement.play();
 
@@ -41,4 +47,9 @@ audioElement.addEventListener('timeupdate', ()=>{
 
 myProgressBar.addEventListener('change',()=>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
+})
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    element.addEventListener('click',(=>{
+        console.log(e);
+    }))
 })
