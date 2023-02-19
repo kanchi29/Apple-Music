@@ -48,8 +48,22 @@ audioElement.addEventListener('timeupdate', ()=>{
 myProgressBar.addEventListener('change',()=>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
 })
+
+const makeAllPlays = ()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.remove('fa-pause');
+        element.classList.add('fa-play');
+    })
+}
+
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-    element.addEventListener('click',(=>{
-        console.log(e);
-    }))
+    element.addEventListener('click',(e)=>{
+        console.log(e.target);
+        makeAllPlays();
+        e.target.classList.remove('fa-play');
+        e.target.classList.add('fa-pause');
+        audioElement.src = 'songs/3.mp3';
+        audioElement.currentTime = 0;
+        audioElement.play();
+    })
 })
