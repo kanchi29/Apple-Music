@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap');
 body{
-    background-color: beige;
+    background-color: rgb(252, 252, 252);
+    background-image: url('bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 *{
     margin: 0;
@@ -16,7 +19,7 @@ nav ul{
     align-items: center;
     list-style-type: none;
     height: 65px;
-    background-color: rgb(216, 203, 203);
+    background-color: rgb(205, 99, 99);
 }
 .brand img{
     width: 90px;
@@ -31,7 +34,7 @@ nav ul li{
     padding: 0 12px;
 }
 .container{
-    min-height: 62vh;
+
     background-color:rgb(231, 212, 212);
     color: black;
     font-family: 'Varela Round', sans-serif;
@@ -40,13 +43,14 @@ nav ul li{
     margin: 23px auto;
     border-radius: 10px;
     padding: 30px;
-    background-image: url('bg.png');
+    background-color: rgb(205, 99, 99);
 }
 .bottom{
-    position: sticky;
-    bottom: 0;
+    position: absolute;
+    bottom: 0px;
     height: 100px;
-    background-color: rgb(216, 203, 203);
+    width: 100%;
+    background-color: rgb(205, 99, 99);
     display: flex;
     color: white;
     justify-content: center;
@@ -69,13 +73,15 @@ nav ul li{
 .songItem{
     height: 50px;
     width: 145%;
+    position: relative;
     margin: 10px 0;
     display: flex;
-    background-color:rgb(250, 223, 223) ;
+    background-color:rgb(202, 122, 122) ;
     color: black;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
+    font-family: 'Varela Round', sans-serif;
 }
 .songItem img{
     width: 45px;
@@ -90,4 +96,36 @@ nav ul li{
 }
 .timestamp i{
     cursor: pointer; 
+}
+
+@media screen and (max-width: 1410px)
+{
+    .songItem{
+        width: 105%;
+    }
+}
+
+@media screen and (max-width: 665px)
+    {
+        .songItem img{
+            display: none;
+        }
+    body{
+        background-color: black;
+    }
+    .songItem{
+        padding-left: 10px;
+    }
+}
+
+
+@media screen and (max-width: 1010px){
+    .container{
+        h1{
+            text-align: justify;
+        }
+    }
+    #response{
+        display: none;
+    }
 }
