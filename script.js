@@ -62,7 +62,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-play');
         e.target.classList.add('fa-pause');
-        audioElement.src = 'songs/2.mp3';
+        audioElement.src = `songs/${songIndex+1}.mp3`;
         audioElement.currentTime = 0;
         audioElement.play();
         masterPlay.classList.remove('fa-play');
