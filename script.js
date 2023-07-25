@@ -3,19 +3,20 @@ console.log(
 );
 //Initialize the Variables
 let songIndex = 0;
-let audioElement = new Audio('songs/WAOYF.mp3');
+let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar'); 
+let masterSongName = document.getElementById('masterSongName'); 
 let songItems = Array.from(document.getElementsByClassName("songItem"));
 
 let songs = [
     {songName: "The Greatest", filePath: "songs/1.mp3", coverPath: "covers/cover.jpg"},
-    {songName: "Written All Over Your Face", filePath: "songs/WAOYF.mp3", coverPath: "covers/cover.jpg"},
-    {songName: "Bigger Than Me", filePath: "songs/2.mp3", coverPath: "covers/cover.jpg"},
-    {songName: "Face The Music", filePath: "songs/3.mp3", coverPath: "covers/cover.jpg"},
-    {songName: "Headline", filePath: "songs/4.mp3", coverPath: "covers/cover.jpg"},
-    {songName: "Saturdays", filePath: "songs/5.mp3", coverPath: "covers/cover.jpg"},
-    {songName: "Holding On To Heartache", filePath: "songs/6.mp3", coverPath: "covers/cover.jpg"}
+    {songName: "Written All Over Your Face", filePath: "songs/2.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Bigger Than Me", filePath: "songs/3.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Face The Music", filePath: "songs/4.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Headline", filePath: "songs/5.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Saturdays", filePath: "songs/6.mp3", coverPath: "covers/cover.jpg"},
+    {songName: "Holding On To Heartache", filePath: "songs/7.mp3", coverPath: "covers/cover.jpg"}
 ]
 
 songItems.forEach((element, i)=>{
@@ -63,9 +64,40 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         e.target.classList.remove('fa-play');
         e.target.classList.add('fa-pause');
         audioElement.src = `songs/${songIndex+1}.mp3`;
+        masterSongName.innerText=songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
         masterPlay.classList.remove('fa-play');
         masterPlay.classList.add('fa-pause');
     })
+})
+
+document.getElementById('next').addEventListener('click',()=>{
+    if(songIndex>=9){
+        songIndex=0
+    }
+    else{
+        songIndex += 1;
+    }
+    audioElement.src = `songs/${songIndex+1}.mp3`;
+    masterSongName.innerText=songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play');
+    masterPlay.classList.add('fa-pause');
+})
+
+document.getElementById('previous').addEventListener('click',()=>{
+    if(songIndex<=0){
+        songIndex=0
+    }
+    else{
+        songIndex -= 1;
+    }
+    audioElement.src = `songs/${songIndex+1}.mp3`;
+    masterSongName.innerText=songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play');
+    masterPlay.classList.add('fa-pause');
 })
